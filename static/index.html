@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taara – Aapki India Se Dost</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Tiro+Devanagari+Hindi&family=Tiro+Gurmukhi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=taara19">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <span class="mark" data-icon="taara"></span>
+      <span class="brand-text"><span id="brand">Taara</span><small>Aapki India se dost</small></span>
+    </div>
+    <div class="stats">
+      <span class="pill" title="Correct in a row"><span class="ic flame" data-icon="flame"></span><b id="streakNow">0</b></span>
+      <span class="pill" title="XP"><span class="ic bolt" data-icon="bolt"></span><b id="xp">0</b> XP</span>
+    </div>
+    <div class="langs" role="group" aria-label="Language">
+      <button data-lang="hi-IN" class="on">हिन्दी</button>
+      <button data-lang="pa-IN">ਪੰਜਾਬੀ</button>
+    </div>
+  </header>
+  <div id="mock" class="banner" hidden>Practice mode: voices are a beep and no Gnani credits are used.</div>
+
+  <main id="home">
+    <section class="who">
+      <div class="who-head"><span id="hiName">Hi there!</span><button id="editName" class="link">Set your name</button></div>
+      <div class="who-label">Who are you getting ready to talk to?</div>
+      <div id="relatives" class="rel-row"></div>
+    </section>
+
+    <div class="home-grid">
+      <div class="col-main">
+    <button id="chatCard" class="call-card feature">
+      <span class="call-icon" data-icon="phone"></span>
+      <span class="call-text"><span class="feature-tag">Main feature</span><b id="chatCardTitle">Pretend call with Dadi</b><small>Say anything. Taara, pretending to be Dadi, talks back in Hindi and helps when you use English.</small></span>
+      <span class="call-go">Call</span>
+    </button>
+
+    <section class="hero">
+      <div class="hero-art" data-icon="taara"></div>
+      <div class="hero-body">
+        <div class="eyebrow" id="levelName">Level 1</div>
+        <h1 id="heroTitle">Get ready to talk with Dadi</h1>
+        <div class="meter" aria-label="Level progress"><span id="levelBar"></span></div>
+        <div class="meter-label"><span id="levelText"></span><span id="goalText"></span></div>
+        <div class="hero-actions"><button id="continueBtn" class="btn primary">Continue</button></div>
+      </div>
+    </section>
+
+    <div class="tools three">
+      <button id="callCard" class="tool-card talk-card">
+        <span class="tool-icon talk-icon">1 2 3</span>
+        <span class="tool-text"><b>Practice call</b><small id="callSub"></small></span>
+      </button>
+      <button id="trCard" class="tool-card">
+        <span class="tool-icon" id="trGlyph">A → अ</span>
+        <span class="tool-text"><b id="trCardTitle">Say it in Hindi</b><small>Type or say anything in English</small></span>
+      </button>
+      <button id="msgCard" class="tool-card">
+        <span class="tool-icon mic-icon" data-icon="mic"></span>
+        <span class="tool-text"><b id="msgCardTitle">Message for Dadi</b><small>Record a voice note to send</small></span>
+      </button>
+    </div>
+
+    <div class="section-head">
+      <h2>Phrases for the call</h2>
+      <span id="count" class="muted"></span>
+    </div>
+    <ol id="path" class="path"></ol>
+    <button id="morePath" class="more-btn" hidden></button>
+
+      </div>
+      <div class="col-side">
+    <div class="section-head">
+      <h2>Little ones</h2>
+      <span class="muted">Ages 2 to 4, no speaking needed</span>
+    </div>
+    <div class="toddler">
+      <button id="tdListen" class="t-card"><span class="t-art art-listen"><i></i><i></i><i></i></span><b>Listen and learn</b><small>Tap a word to hear it</small></button>
+      <button id="tdColour" class="t-card"><span class="t-art art-colour"><i></i><i></i><i></i><i></i></span><b>Find the colour</b><small>Tap the colour Taara says</small></button>
+      <button id="tdCount" class="t-card"><span class="t-art art-count"><i></i><i></i><i></i></span><b>Count with Taara</b><small>Tap the right number</small></button>
+    </div>
+
+    <div class="section-head">
+      <h2>First words</h2>
+    </div>
+    <div id="tracks" class="tracks"></div>
+    <button id="moreTracks" class="more-btn" hidden></button>
+
+    <div class="section-head">
+      <h2>Games</h2>
+    </div>
+    <button id="quizCard" class="tool-card wide">
+      <span class="tool-icon">?</span>
+      <span class="tool-text"><b>Quick quiz</b><small>Hear a word and pick what it means</small></span>
+    </button>
+
+    <button id="toParents" class="parents-link">For parents: child profile, progress, family phrases, send to family</button>
+        </div>
+    </div>
+  </main>
+
+  <main id="stage" hidden>
+    <div class="stage-top">
+      <button id="back" class="icon-btn" aria-label="Back">←</button>
+      <div class="dots" id="dots"></div>
+      <span id="modeTag" class="tag" hidden></span>
+    </div>
+    <div class="coach">
+      <div id="avatar" class="avatar" data-icon="taara"></div>
+      <div id="coachName" class="coach-name">Taara</div>
+    </div>
+    <div id="bubble" class="bubble" hidden>
+      <div id="bubbleLabel" class="bubble-label"></div>
+      <div id="bubbleText" class="native"></div>
+      <div id="bubbleRoman" class="roman"></div>
+      <div id="bubbleEn" class="en"></div>
+    </div>
+    <div id="options" class="options" hidden></div>
+    <div id="chatLog" class="chat-log" hidden aria-live="polite"></div>
+    <div id="heard" class="heard" hidden>
+      <div id="heardText" class="muted"></div>
+      <div id="chips" class="chips"></div>
+    </div>
+    <div id="turn" class="turn" hidden>
+      <button id="mic" class="mic" aria-label="Your turn, speak now"><span data-icon="mic"></span></button>
+      <div class="turn-label">Your turn. Speak now.</div>
+      <div class="helpers">
+        <button id="again" class="btn small">Hear again</button>
+        <button id="slowly" class="btn small">Say it slowly</button>
+        <button id="inEnglish" class="btn small">In English</button>
+        <button id="skipBtn" class="btn small">Skip</button>
+      </div>
+    </div>
+    <form id="chatForm" class="chat-form" hidden>
+      <input id="chatInput" maxlength="160" placeholder="Or type here" aria-label="Type what you want to say">
+      <button class="btn small" type="submit">Send</button>
+      <button id="chatEnd" class="btn small" type="button">End call</button>
+    </form>
+    <div id="result" class="result" hidden>
+      <div class="result-stars" id="resultStars"></div>
+      <div class="result-title" id="resultTitle"></div>
+      <div class="result-xp" id="resultXp"></div>
+    </div>
+    <div id="puzzle" class="puzzle" hidden>
+      <div class="puzzle-title">Bonus: build the sentence</div>
+      <div class="puzzle-hint muted" id="puzzleHint"></div>
+      <div id="slots" class="slots"></div>
+      <div id="pool" class="pool"></div>
+      <div class="puzzle-actions">
+        <button id="puzzleReset" class="btn small">Start over</button>
+        <button id="puzzleSkip" class="btn small">Skip</button>
+      </div>
+    </div>
+    <div id="next" class="next" hidden>
+      <button id="nextBtn" class="btn primary">Next</button>
+      <button id="pathBtn" class="btn ghost">Back home</button>
+    </div>
+  </main>
+
+  <main id="listen" hidden>
+    <div class="stage-top"><button id="back4" class="icon-btn" aria-label="Back">←</button></div>
+    <h2>Listen and learn</h2>
+    <p class="muted">Tap a word to hear Taara say it.</p>
+    <div id="listenTabs" class="tabs"></div>
+    <div id="listenGrid" class="word-grid"></div>
+  </main>
+
+  <main id="translator" hidden>
+    <div class="stage-top"><button id="back3" class="icon-btn" aria-label="Back">←</button></div>
+    <h2 id="trTitle">Say it in Hindi</h2>
+    <p class="muted" id="trIntro"></p>
+    <form id="trForm" class="tr-form">
+      <input id="trInput" maxlength="140" placeholder="For example: I love you Dadi" aria-label="Your sentence in English">
+      <button class="btn primary" type="submit">Show me</button>
+    </form>
+    <button id="trMic" class="btn ghost tr-mic"><span class="ic" data-icon="mic"></span><span id="trMicLabel">Or say it in English</span></button>
+    <div id="trResult" class="bubble model" hidden>
+      <div class="bubble-label" id="trYouSaid"></div>
+      <div class="native" id="trNative"></div>
+      <div class="roman" id="trRoman"></div>
+      <div class="tr-actions">
+        <button id="trHear" class="btn small">Hear it</button>
+        <button id="trPractice" class="btn primary">Now you say it</button>
+      </div>
+    </div>
+    <p class="muted tr-note">Taara gives short, simple, child-friendly sentences, and skips anything personal.</p>
+  </main>
+
+  <main id="message" hidden>
+    <div class="stage-top"><button id="back5" class="icon-btn" aria-label="Back">←</button></div>
+    <h2 id="msgTitle">Message for Dadi</h2>
+    <p class="muted" id="msgIntro"></p>
+    <div id="msgIdeas" class="ideas"></div>
+    <div class="msg-rec">
+      <button id="msgRecord" class="mic small-mic" aria-label="Record message"><span data-icon="mic"></span></button>
+      <div id="msgStatus" class="turn-label">Tap to record</div>
+    </div>
+    <div id="msgDone" class="panel" hidden>
+      <audio id="msgAudio" controls></audio>
+      <div class="tr-actions">
+        <button id="msgShare" class="btn primary">Send it</button>
+        <button id="msgAgain" class="btn small">Record again</button>
+      </div>
+      <p class="muted">On a phone, Send opens WhatsApp and other apps. On a computer it saves the file to attach.</p>
+    </div>
+  </main>
+
+  <main id="parents" hidden>
+    <div class="stage-top"><button id="back2" class="icon-btn" aria-label="Back">←</button></div>
+    <h2>For parents</h2>
+    <p class="muted">Taara is a practice coach, not a relative. She teaches what grandparents and relatives usually ask on the phone. Your child answers out loud and every try is praised. English answers are turned into the family language to repeat, and every session points your child back to a real call. Progress is stored on this computer.</p>
+
+    <section class="panel">
+      <h3>Child profile</h3>
+      <form id="profileForm" class="form two">
+        <label><span>Child's name (Taara will greet them)</span><input name="name" maxlength="20" autocomplete="off"></label>
+        <label><span>So Hindi and Punjabi use the right forms</span>
+          <select name="gender"><option value="">Prefer not to say</option><option value="boy">Boy</option><option value="girl">Girl</option></select>
+        </label>
+        <button class="btn primary" type="submit">Save</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h3>Badges</h3>
+      <div id="badges" class="badges"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Progress</h3>
+      <div id="progress"></div>
+      <button id="sendDadi" class="btn primary">Send family what was learnt on WhatsApp</button>
+    </section>
+
+    <section class="panel">
+      <h3>Add a family phrase</h3>
+      <p class="muted">For things only your family says: a cousin's name, a nickname, a family saying. Taara speaks exactly what you type.</p>
+      <form id="customForm" class="form">
+        <label><span id="lblAsk">What Dadi asks</span><input name="ask" maxlength="120" required></label>
+        <label><span id="lblTarget">What your child should say</span><input name="target" maxlength="120" required></label>
+        <label><span>Answer in English letters (optional)</span><input name="target_roman" maxlength="120"></label>
+        <label><span>Meaning in English (optional)</span><input name="target_en" maxlength="120"></label>
+        <button class="btn primary" type="submit">Add phrase</button>
+      </form>
+      <div id="customList"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Recently heard</h3>
+      <ul id="log"></ul>
+      <button id="reset" class="btn small">Reset progress</button>
+    </section>
+  </main>
+</div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="toast" role="status" hidden></div>
+<script src="app.js?v=taara19"></script>
+</body>
+</html>
