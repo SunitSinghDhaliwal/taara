@@ -1,5 +1,9 @@
 # Taara – Aapki India Se Dost
 
+- **Live app:** https://taara-533u.onrender.com (free hosting, the first load can take up to 50 seconds)
+- **Demo video (2 min):** https://drive.google.com/file/d/1v3m1JvYngzYuaKVAAtaFhNhK1qeXp5CQ/view?usp=sharing
+- **1-page pitch:** [PITCH.md](PITCH.md)
+
 Taara helps kids who grow up abroad (ages 2 to 10) learn Hindi and Punjabi, so they can actually talk to their Dadi, Nani, Dada and the rest of the family on the phone.
 
 Built solo by Sunit Singh Dhaliwal for Gnani AI's Great Indian AI Internship Challenge.
@@ -48,6 +52,10 @@ cp .env.example .env   # add your Gnani and Groq keys
 ```
 
 Open http://localhost:8000 in Chrome and allow the microphone. Set `MOCK_GNANI=1` to try it with beeps and no API calls. Tests: `.venv/bin/pytest -q`.
+
+### Deploy (Render)
+
+Build command `pip install -r requirements.txt`, start command `uvicorn server:app --host 0.0.0.0 --port $PORT`. Set `GNANI_API_KEY`, `LLM_API_KEY`, `MOCK_GNANI=0` and `MAX_LIVE_GNANI_CALLS` as environment variables.
 
 ## Limits
 
