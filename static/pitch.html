@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Taara – Solution Pitch</title><style>
+body{font-family:Inter,Helvetica,Arial,sans-serif;max-width:760px;margin:32px auto;padding:0 16px;line-height:1.5;color:#1d1f3a;background:#ECEDF8}
+main{background:#fff;border-radius:16px;padding:28px 32px}
+h1{color:#2B2F8F;margin-top:0} h2{color:#2B2F8F;border-bottom:1px solid #d9dbf0;padding-bottom:4px}
+a{color:#2B2F8F}
+</style></head><body><main><h1>Taara – Aapki India Se Dost</h1>
+<p><strong>Great Indian AI Internship Challenge by Gnani AI</strong>
+Sunit Singh Dhaliwal, Thapar Institute of Engineering and Technology</p>
+<h2>The problem</h2>
+<p>Millions of Indian kids grow up abroad. They love their Dadi, Nani, Bua and Chacha back home, but most can't hold a conversation in Hindi or Punjabi. Family calls turn into "yes Dadi", "good", "okay", and then the phone gets passed back to a parent. Language apps teach vocabulary, not how to actually talk to your grandmother.</p>
+<h2>Who it's for</h2>
+<ul>
+<li>NRI kids aged 2 to 10 (games for ages 2 to 4 need no speaking)</li>
+<li>Parents who want their kids to stay connected to family and language</li>
+</ul>
+<h2>The solution</h2>
+<p>Taara is a practice buddy that gets kids ready for real family calls.</p>
+<ul>
+<li><strong>Pretend call (main feature):</strong> the kid picks a relative (Dadi, Dada, Nani, Nana, Bua, Chacha, Mausi, Mama, or Bebe, Bhua, Masi in Punjabi). Taara plays that relative and talks in simple Hindi or Punjabi. The kid replies by voice. If they answer in English, Taara shows how to say it in Hindi and they try again.</li>
+<li><strong>Phrases for the call:</strong> learn what each relative usually asks and how to answer, with stars, XP and a build-the-sentence bonus.</li>
+<li><strong>Say it in Hindi:</strong> type or say anything in English and hear it in Hindi.</li>
+<li><strong>Little ones:</strong> Find the colour, Count with Taara, Listen and learn.</li>
+<li><strong>For parents:</strong> progress view, a WhatsApp summary, and the option to add family phrases.</li>
+</ul>
+<p>Taara never pretends to be real family outside clearly announced pretend games, and every session ends by pointing the kid to a real call.</p>
+<h2>Gnani AI stack</h2>
+<ul>
+<li><strong>Gnani Prisma v3.0 (speech to text, REST):</strong> turns the child's speech into text so Taara can check their Hindi and reply.</li>
+<li><strong>Gnani Timbre v3.0 (text to speech):</strong> voices for every character. Lakshmi for Taara and female relatives, Yashraj for male relatives.</li>
+</ul>
+<p>Other parts: FastAPI backend with a single web page; Groq (gpt-oss-120b) for replies, translation and grading, with guardrails (script check, child-safe topics, no personal details).</p>
+<h2>Impact</h2>
+<p>Kids get a safe place to make mistakes before the real call. Grandparents get grandkids who can actually talk to them. The same approach can work for any Indian language Gnani supports.</p>
+<h2>Limits and next steps</h2>
+<p>Not yet tested with real children, and Prisma is tuned for adult voices. Next: test with families, add more languages, and add a mobile app.</p><p><a href="/">Open the Taara app</a></p></main></body></html>
